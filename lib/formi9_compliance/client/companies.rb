@@ -1,5 +1,5 @@
 module Formi9Compliance
-  class Api
+  class Client
     # Defines methods related to companies
     module Companies
 

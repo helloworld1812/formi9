@@ -1,5 +1,5 @@
 module Formi9Compliance
-  class Api
+  class Client
     # Defines methods related to formi9
     module Eformi9
       def create_section1(options={})

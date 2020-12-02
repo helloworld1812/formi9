@@ -15,21 +15,30 @@ And then execute:
 
     $ bundle install
 
-Or install it yourself as:
+You can use an initializer to configure this gem, please put the following code into `config/initializers/formi9_complicance.rb`
 
-    $ gem install formi9_compliance
+```ruby
+Formi9Compliance.configure do |config|
+  config.partner_id = 'Your Partner Id'
+  config.username = 'Your username'
+  config.password = 'Your password'
+end
+```
 
 ## Usage
 
 ## Create a company
 
+```ruby
 Formi9Compliance.create_company_with_mou(options)
+```
 
 
 ## Create section 1 for employee
 
+```ruby
 Formi9Compliance.create_section1(options)
-
+```
 the response contains
 
 - resultId
@@ -38,16 +47,19 @@ the response contains
 
 ## Create section 2 for HR
 
+```ruby
 Formi9Compliance.create_section2
-
+```
 
 ### Retrieve the status of form
 
+```ruby
 Formi9Compliance.case_status(result_id, auto_login_url: true)
-
+```
 
 ### Download the PDF of formi9
 
+```ruby
 Formi9Compliance.download_pdf(result_id, {
   printSignatures: true,
   printNotes: true,
@@ -55,7 +67,7 @@ Formi9Compliance.download_pdf(result_id, {
   printDocs: true,
   printAudit_trail: true 
 })
-
+```
 
 ## Development
 

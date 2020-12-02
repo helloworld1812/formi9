@@ -1,6 +1,6 @@
 # formi9_compliance
 
-A Ruby API wrapper for [formi9.com](https://www.formi9.com/FormI9Api/swagger/ui/index) [![Build Status](https://secure.travis-ci.org/helloworld1812/formi9_compliance.svg)](http://travis-ci.org/helloworld1812/formi9_compliance)
+A Ruby API wrapper for [formi9.com](https://www.formi9.com/FormI9Api/swagger/ui/index) [![Build Status](https://travis-ci.com/helloworld1812/formi9_compliance.svg?branch=master)](https://travis-ci.com/github/helloworld1812/formi9_compliance)
 
 
 ## Installation

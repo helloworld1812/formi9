@@ -1,0 +1,17 @@
+{
+  "active": true,
+  "hold": false,
+  "parentCompanyName": "N/A",
+  "name": "ACM company",
+  "address1": "123 Elm St.",
+  "address2": "",
+  "city": "Irvine",
+  "state": "CA",
+  "zip": "92606     ",
+  "companyId": "demo",
+  "clientCompanyWSId": "392",
+  "employerIDNumber": "",
+  "numberEmployees": 0,
+  "section1WorkStation": true,
+  "section1Remote": true
+}

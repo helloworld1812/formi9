@@ -8,7 +8,7 @@ module Formi9Compliance
     VALID_OPTIONS_KEYS = [
       :partner_id, 
       :username,
-      :password
+      :password,
       :adapter,
       :connection_options,
       :host,
@@ -53,7 +53,7 @@ module Formi9Compliance
     DEFAULT_PROXY = nil
 
     # The user agent that will be sent to the API endpoint if none is set
-    DEFAULT_USER_AGENT = "Formi9Compliance Ruby Gem #{Formi9Compliance::VERSION}".freeze
+    DEFAULT_USER_AGENT = "formi9.com Ruby Gem #{Formi9Compliance::VERSION}".freeze
 
     # An array of valid request/response formats
     VALID_FORMATS = [:json].freeze
@@ -82,7 +82,6 @@ module Formi9Compliance
     def reset
       self.adapter            = DEFAULT_ADAPTER
       self.connection_options = DEFAULT_CONNECTION_OPTIONS
-      self.host               = DEFAULT_HOST
       self.endpoint           = DEFAULT_ENDPOINT
       self.format             = DEFAULT_FORMAT
       self.proxy              = DEFAULT_PROXY

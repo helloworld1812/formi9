@@ -17,7 +17,7 @@ module Formi9Compliance
       }.merge(connection_options)
 
       Faraday::Connection.new(options) do |conn|
-        conn.authorization :Bearer, Formi9Compliance.access_token
+        conn.authorization :Bearer, access_token
         # https://github.com/lostisland/faraday/issues/417#issuecomment-223413386
         conn.options[:timeout] = timeout 
         conn.options[:open_timeout] = open_timeout 

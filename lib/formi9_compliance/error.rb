@@ -64,4 +64,7 @@ module Formi9Compliance
 
   # Raised when configuration is missing
   class MissingRequiredConfigurationt < Error; end
+
+  # Invalid username or password
+  class CredentialAreInvalid < Error; end
 end

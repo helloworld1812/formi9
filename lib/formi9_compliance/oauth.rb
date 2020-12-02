@@ -1,9 +1,5 @@
 module Formi9Compliance
   module OAuth
-    def access_token_cache_key
-      Digest::MD5.hexdigest([partner_id, username, password].join)
-    end
-
     def access_token
       token = Rails.cache.read(access_token_cache_key)
 
@@ -11,18 +7,28 @@ module Formi9Compliance
         return token
       else
         reset_token
-        return Rails.cache.read(cache_key)
+        Rails.cache.read(access_token_cache_key)
       end
     end
 
-
     def reset_token
-      if token.nil? || token['']
-        response = post('login', {id: partner_id, username: username, password: password})
-
-        # double check to avoid race condition
-        Rails.cache.write(response['token'])   if Rails.cache.read(cache_key).nil? 
+      response = Faraday.post(endpoint + 'login', {id: partner_id, username: username, password: password})
+      raise CredentialAreInvalid.new('Credentials are missing or invalid.') if response.status != 200
+      body = JSON.parse(response.body)
+      puts access_token_cache_key
+      if Rails.cache.read(access_token_cache_key).nil?
+        Rails.cache.write(access_token_cache_key, body['accessToken'], expires_in: token_cache_duration(body['expirationDateUtc']))
       end
+    end
+
+    def access_token_cache_key
+      Digest::MD5.hexdigest([partner_id, username, password].join)
+    end
+
+    def token_cache_duration(timestamp)
+      max = 6.days.to_i
+      duration = timestamp.to_datetime.utc - Time.now
+      duration > max ? max : duration
     end
   end
 end

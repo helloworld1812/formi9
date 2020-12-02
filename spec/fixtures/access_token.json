@@ -1,0 +1,4 @@
+{
+  "accessToken": "6a978415d1b23c4b477ff915b0d7ee11",
+  "expirationDateUtc": "<%= (Time.now + 1.week).utc.iso8601 %>"
+}

@@ -2,7 +2,6 @@ require File.expand_path('../formi9_compliance/error', __FILE__)
 require File.expand_path('../formi9_compliance/configuration', __FILE__)
 require File.expand_path('../formi9_compliance/api', __FILE__)
 require File.expand_path('../formi9_compliance/client', __FILE__)
-require File.expand_path('../formi9_compliance/response', __FILE__)
 
 module Formi9Compliance
   extend Configuration

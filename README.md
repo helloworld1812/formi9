@@ -23,12 +23,12 @@ Or install it yourself as:
 
 ## Create a company
 
-Formi9Compliance.create_company_with_mou
+Formi9Compliance.create_company_with_mou(options)
 
 
 ## Create section 1 for employee
 
-Formi9Compliance.create_section1
+Formi9Compliance.create_section1(options)
 
 the response contains
 
@@ -43,24 +43,18 @@ Formi9Compliance.create_section2
 
 ### Retrieve the status of form
 
-Formi9Compliance.get(result_id, auto_login_url: true)
+Formi9Compliance.case_status(result_id, auto_login_url: true)
 
 
-### Doweload the PDF of formi9
+### Download the PDF of formi9
 
 Formi9Compliance.download_pdf(result_id, {
-  print_signature: true,
-  print_notes: true,
-  print_everify: true,
-  print_docs: true,
-  print_audit_trail: true 
+  printSignatures: true,
+  printNotes: true,
+  printEverify: true,
+  printDocs: true,
+  printAudit_trail: true 
 })
-
-
-
-
-get the auto 
-
 
 
 ## Development

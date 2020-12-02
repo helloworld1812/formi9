@@ -19,13 +19,11 @@ module Formi9Compliance
       end
 
       def download_pdf(result_id, options={})
+        options = options.with_indifferent_access
         params = []
-        params << 'printSignatures=true' unless options[:print_signatures]
-        params << 'printNotes=true' unless options[:print_notes]
-        params << 'printEVerify=true' unless options[:print_everify]
-        params << 'printDocs=true' unless options[:print_docs]
-        params << 'printAuditTrail=true' unless options[:print_audit_trail]
-
+        [:printSignatures, :printNotes, :printEVerify, :printDocs, :printAuditTrail].each do |key|
+          params << "#{key}=true" if options[:key]
+        end
         get("eformi9/#{result_id}/pdf?#{params.join('&')}")
       end
     end

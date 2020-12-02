@@ -1,7 +1,6 @@
 module Formi9Compliance
   # Part1 API error
   # Custom error class for rescuing from all formi9.com errors
-  module API
     class Error < StandardError
       attr_reader :http_method, :url, :errors
 
@@ -42,7 +41,6 @@ module Formi9Compliance
 
     # Raised when formi9.com returns the HTTP status code 504
     class GatewayTimeout < Error; end
-  end
 
 
   # Part2 Non-API error

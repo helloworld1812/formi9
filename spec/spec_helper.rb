@@ -10,6 +10,11 @@ else
   end
 end
 
+# Set up Rails cache for testing
+require 'rails'
+Rails.cache = ActiveSupport::Cache.lookup_store(:memory_store)
+
+
 require File.expand_path('../../lib/formi9', __FILE__)
 
 require 'rspec'
@@ -71,8 +76,3 @@ end
 def fixture(file)
   File.new(fixture_path + '/' + file)
 end
-
-
-# Set up Rails cache for testing
-require 'rails'
-Rails.cache = ActiveSupport::Cache.lookup_store(:memory_store)

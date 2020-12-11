@@ -1,4 +1,4 @@
-module Formi9Compliance
+module Formi9
   # Part1 API error
   # Custom error class for rescuing from all formi9.com errors
     class Error < StandardError

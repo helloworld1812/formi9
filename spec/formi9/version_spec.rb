@@ -1,7 +1,7 @@
 require File.expand_path('../../spec_helper', __FILE__)
 
-describe Formi9Compliance::VERSION do
+describe Formi9::VERSION do
   it "has a version number" do
-    expect(Formi9Compliance::VERSION).not_to be nil
+    expect(Formi9::VERSION).not_to be nil
   end
 end

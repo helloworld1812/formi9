@@ -1,8 +1,8 @@
 require File.expand_path('../spec_helper', __FILE__)
 
-describe Formi9Compliance do
+describe Formi9 do
   after do
-    Formi9Compliance.reset
+    Formi9.reset
   end
 
   context "when delegating to a client" do
@@ -20,64 +20,64 @@ describe Formi9Compliance do
     end
 
     it "should return the same result as a client" do
-      response1 = Formi9Compliance.get_company_info('acm_company').body
-      response2 = Formi9Compliance::Client.new.get_company_info('acm_company').body
+      response1 = Formi9.get_company_info('acm_company').body
+      response2 = Formi9::Client.new.get_company_info('acm_company').body
       expect(response1['clientCompanyWSId']).to eq(response2['clientCompanyWSId'])
     end
 
   end
 
   describe ".client" do
-    it "should be a Formi9Compliance::Client" do
-      expect(Formi9Compliance.client.is_a?(Formi9Compliance::Client)).to be true
+    it "should be a Formi9::Client" do
+      expect(Formi9.client.is_a?(Formi9::Client)).to be true
     end
   end
 
   describe ".adapter" do
     it "should return the default adapter" do
-      expect(Formi9Compliance.adapter).to eq(Formi9Compliance::Configuration::DEFAULT_ADAPTER)
+      expect(Formi9.adapter).to eq(Formi9::Configuration::DEFAULT_ADAPTER)
     end
   end
 
   describe ".adapter=" do
     it "should set the adapter" do
-      Formi9Compliance.adapter = :typhoeus
-      expect(Formi9Compliance.adapter).to eq(:typhoeus)
+      Formi9.adapter = :typhoeus
+      expect(Formi9.adapter).to eq(:typhoeus)
     end
   end
 
   describe ".endpoint" do
     it "should return the default endpoint" do
-      expect(Formi9Compliance.endpoint).to eq(Formi9Compliance::Configuration::DEFAULT_ENDPOINT)
+      expect(Formi9.endpoint).to eq(Formi9::Configuration::DEFAULT_ENDPOINT)
     end
   end
 
   describe ".endpoint=" do
     it "should set the endpoint" do
-      Formi9Compliance.endpoint = 'http://google.com'
-      expect(Formi9Compliance.endpoint).to eq('http://google.com')
+      Formi9.endpoint = 'http://google.com'
+      expect(Formi9.endpoint).to eq('http://google.com')
     end
   end
 
   describe ".user_agent" do
     it "should return the default user agent" do
-      expect(Formi9Compliance.user_agent).to eq(Formi9Compliance::Configuration::DEFAULT_USER_AGENT)
+      expect(Formi9.user_agent).to eq(Formi9::Configuration::DEFAULT_USER_AGENT)
     end
   end
 
   describe ".user_agent=" do
     it "should set the user_agent" do
-      Formi9Compliance.user_agent = 'Custom User Agent - Bot'
-      expect(Formi9Compliance.user_agent).to eq('Custom User Agent - Bot')
+      Formi9.user_agent = 'Custom User Agent - Bot'
+      expect(Formi9.user_agent).to eq('Custom User Agent - Bot')
     end
   end
 
   describe ".configure" do
-    Formi9Compliance::Configuration::VALID_OPTIONS_KEYS.each do |key|
+    Formi9::Configuration::VALID_OPTIONS_KEYS.each do |key|
       it "should set the #{key}" do
-        Formi9Compliance.configure do |config|
+        Formi9.configure do |config|
           config.send("#{key}=", key)
-          expect(Formi9Compliance.send(key)).to eq(key)
+          expect(Formi9.send(key)).to eq(key)
         end
       end
     end

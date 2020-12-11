@@ -2,7 +2,7 @@ require File.expand_path('../connection', __FILE__)
 require File.expand_path('../request', __FILE__)
 require File.expand_path('../oauth', __FILE__)
 
-module Formi9Compliance
+module Formi9
   # @private
   class API
     # @private
@@ -10,7 +10,7 @@ module Formi9Compliance
 
     # Creates a new API
     def initialize(options={})
-      options = Formi9Compliance.options.merge(options)
+      options = Formi9.options.merge(options)
       Configuration::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key])
       end

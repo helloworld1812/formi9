@@ -1,7 +1,7 @@
 require 'faraday_middleware'
 Dir[File.expand_path('../../faraday/*.rb', __FILE__)].each{|f| require f}
 
-module Formi9Compliance
+module Formi9
   module Connection
 
     private
@@ -10,7 +10,7 @@ module Formi9Compliance
       options = {
         headers: {
           "Accept" => "application/#{format}; charset=utf-8",
-          "User-Agent" => Formi9Compliance.user_agent,
+          "User-Agent" => Formi9.user_agent,
         },
         proxy: proxy,
         url: endpoint

@@ -4,13 +4,13 @@ rescue LoadError
   # ignore
 else
   SimpleCov.start do
-    add_group 'Formi9Compliance', 'lib/formi9_compliance'
+    add_group 'Formi9', 'lib/formi9'
     add_group 'Faraday Middleware', 'lib/faraday'
     add_group 'Specs', 'spec'
   end
 end
 
-require File.expand_path('../../lib/formi9_compliance', __FILE__)
+require File.expand_path('../../lib/formi9', __FILE__)
 
 require 'rspec'
 require 'webmock/rspec'
@@ -33,35 +33,35 @@ def capture_output(&block)
 end
 
 def a_delete(path)
-  a_request(:delete, Formi9Compliance.endpoint + path)
+  a_request(:delete, Formi9.endpoint + path)
 end
 
 def a_get(path)
-  a_request(:get, Formi9Compliance.endpoint + path)
+  a_request(:get, Formi9.endpoint + path)
 end
 
 def a_post(path)
-  a_request(:post, Formi9Compliance.endpoint + path)
+  a_request(:post, Formi9.endpoint + path)
 end
 
 def a_put(path)
-  a_request(:put, Formi9Compliance.endpoint + path)
+  a_request(:put, Formi9.endpoint + path)
 end
 
 def stub_delete(path)
-  stub_request(:delete, Formi9Compliance.endpoint + path)
+  stub_request(:delete, Formi9.endpoint + path)
 end
 
 def stub_get(path)
-  stub_request(:get, Formi9Compliance.endpoint + path)
+  stub_request(:get, Formi9.endpoint + path)
 end
 
 def stub_post(path)
-  stub_request(:post, Formi9Compliance.endpoint + path)
+  stub_request(:post, Formi9.endpoint + path)
 end
 
 def stub_put(path)
-  stub_request(:put, Formi9Compliance.endpoint + path)
+  stub_request(:put, Formi9.endpoint + path)
 end
 
 def fixture_path

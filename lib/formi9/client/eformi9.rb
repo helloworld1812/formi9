@@ -1,4 +1,4 @@
-module Formi9Compliance
+module Formi9
   class Client
     # Defines methods related to formi9
     module Eformi9

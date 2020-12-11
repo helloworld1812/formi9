@@ -1,6 +1,6 @@
 require File.expand_path('../../spec_helper', __FILE__)
 
-describe Formi9Compliance::OAuth do
+describe Formi9::OAuth do
   describe '#access_token' do
     it 'should read token from cache xxxx' do
       response = {
@@ -12,7 +12,7 @@ describe Formi9Compliance::OAuth do
         to_return(:body => response, :headers => {:content_type => "application/json; charset=utf-8"})
 
 
-      client = Formi9Compliance::Client.new(
+      client = Formi9::Client.new(
         partner_id: 'acm_company',
         username: 'acm',
         password: '3G6£!)d1Oi$&U43w9@h*'
@@ -29,7 +29,7 @@ describe Formi9Compliance::OAuth do
   describe '#access_token_cache_key' do
     it 'should be changed when password, username, or partner_id has been changed' do
       [:partner_id, :username, :password].each do |key|
-        client = Formi9Compliance::Client.new(
+        client = Formi9::Client.new(
           partner_id: 'acm_company',
           username: 'acm',
           password: '3G6£!)d1Oi$&U43w9@h*'
@@ -48,17 +48,17 @@ describe Formi9Compliance::OAuth do
 
 
     it 'should be changed when password has been changed' do
-      Formi9Compliance.configure do |config|
+      Formi9.configure do |config|
         config.partner_id = 'acm_company'
         config.username = 'acm'
         config.password = '3G6£!)d1Oi$&U43w9@h*'
       end
-      old_key = Formi9Compliance.access_token_cache_key
+      old_key = Formi9.access_token_cache_key
 
       # change the partner_id, username, password
       [:partner_id, :username, :password].each do |key|
-        Formi9Compliance.send("#{key}=", 'new_value')
-        new_key = Formi9Compliance.access_token_cache_key
+        Formi9.send("#{key}=", 'new_value')
+        new_key = Formi9.access_token_cache_key
 
         # the access token cache key should be changed
         expect(old_key != new_key).to be true
@@ -66,13 +66,13 @@ describe Formi9Compliance::OAuth do
     end
 
     it 'should share same access_token when password, username, and partner_id are identical' do
-      client1 = Formi9Compliance::Client.new(
+      client1 = Formi9::Client.new(
         partner_id: 'acm_company',
         username: 'acm',
         password: '3G6£!)d1Oi$&U43w9@h*'
       )
 
-      client2 = Formi9Compliance::Client.new(
+      client2 = Formi9::Client.new(
         partner_id: 'acm_company',
         username: 'acm',
         password: '3G6£!)d1Oi$&U43w9@h*'

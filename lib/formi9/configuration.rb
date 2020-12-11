@@ -1,10 +1,10 @@
 require 'faraday'
 require File.expand_path('../version', __FILE__)
 
-module Formi9Compliance
+module Formi9
 # Defines constants and methods related to configuration
   module Configuration
-    # An array of valid keys in the options hash when configuring a {Formi9Compliance::API}
+    # An array of valid keys in the options hash when configuring a {Formi9::API}
     VALID_OPTIONS_KEYS = [
       :partner_id, 
       :username,
@@ -53,7 +53,7 @@ module Formi9Compliance
     DEFAULT_PROXY = nil
 
     # The user agent that will be sent to the API endpoint if none is set
-    DEFAULT_USER_AGENT = "formi9.com Ruby Gem #{Formi9Compliance::VERSION}".freeze
+    DEFAULT_USER_AGENT = "formi9.com Ruby Gem #{Formi9::VERSION}".freeze
 
     # An array of valid request/response formats
     VALID_FORMATS = [:json].freeze

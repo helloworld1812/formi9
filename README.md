@@ -1,6 +1,6 @@
-# formi9_compliance
+# formi9
 
-A Ruby API wrapper for [formi9.com](https://www.formi9.com/FormI9Api/swagger/ui/index) [![Build Status](https://secure.travis-ci.org/helloworld1812/formi9_compliance.svg)](http://travis-ci.org/helloworld1812/formi9_compliance)
+A Ruby API wrapper for [formi9.com](https://www.formi9.com/FormI9Api/swagger/ui/index) [![Build Status](https://secure.travis-ci.org/helloworld1812/formi9.svg)](http://travis-ci.org/helloworld1812/formi9)
 
 
 ## Installation
@@ -8,7 +8,7 @@ A Ruby API wrapper for [formi9.com](https://www.formi9.com/FormI9Api/swagger/ui/
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'formi9_compliance'
+gem 'formi9'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 You can use an initializer to configure this gem, please put the following code into `config/initializers/formi9_complicance.rb`
 
 ```ruby
-Formi9Compliance.configure do |config|
+Formi9.configure do |config|
   config.partner_id = 'Your Partner Id'
   config.username = 'Your username'
   config.password = 'Your password'
@@ -30,14 +30,14 @@ end
 ## Create a company
 
 ```ruby
-Formi9Compliance.create_company_with_mou(options)
+Formi9.create_company_with_mou(options)
 ```
 
 
 ## Create section 1 for employee
 
 ```ruby
-Formi9Compliance.create_section1(options)
+Formi9.create_section1(options)
 ```
 the response contains
 
@@ -48,19 +48,19 @@ the response contains
 ## Create section 2 for HR
 
 ```ruby
-Formi9Compliance.create_section2
+Formi9.create_section2
 ```
 
 ### Retrieve the status of form
 
 ```ruby
-Formi9Compliance.case_status(result_id, auto_login_url: true)
+Formi9.case_status(result_id, auto_login_url: true)
 ```
 
 ### Download the PDF of formi9
 
 ```ruby
-Formi9Compliance.download_pdf(result_id, {
+Formi9.download_pdf(result_id, {
   printSignatures: true,
   printNotes: true,
   printEverify: true,
@@ -77,7 +77,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/helloworld1812/formi9_compliance. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/helloworld1812/formi9_compliance/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/helloworld1812/formi9. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/helloworld1812/formi9/blob/master/CODE_OF_CONDUCT.md).
 
 ## Reference
 
@@ -90,4 +90,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Formi9Compliance project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/helloworld1812/formi9_compliance/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Formi9 project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/helloworld1812/formi9/blob/master/CODE_OF_CONDUCT.md).

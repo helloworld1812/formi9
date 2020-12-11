@@ -10,19 +10,19 @@ module FaradayMiddleWare
       @app.call(env).on_complete do |response|
         case response.status.to_i
         when 400
-          raise Formi9Compliance::BadRequest.new(response)
+          raise Formi9::BadRequest.new(response)
         when 401
-          raise Formi9Compliance::Unauthorized.new(response)
+          raise Formi9::Unauthorized.new(response)
         when 404
-          raise Formi9Compliance::NotFound.new(response)
+          raise Formi9::NotFound.new(response)
         when 500
-          raise Formi9Compliance::InternalServerError.new(response)
+          raise Formi9::InternalServerError.new(response)
         when 502
-          raise Formi9Compliance::BadGateway.new(response)
+          raise Formi9::BadGateway.new(response)
         when 503
-          raise Formi9Compliance::ServiceUnavailable.new(response)
+          raise Formi9::ServiceUnavailable.new(response)
         when 504
-          raise Formi9Compliance::GatewayTimeout.new(response)
+          raise Formi9::GatewayTimeout.new(response)
         end
       end
     end

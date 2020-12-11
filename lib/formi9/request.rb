@@ -1,6 +1,6 @@
 require 'base64'
 
-module Formi9Compliance
+module Formi9
   # Defines HTTP request methods
   module Request
     # HTTP GET request

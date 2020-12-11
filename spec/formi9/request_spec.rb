@@ -1,6 +1,6 @@
 require File.expand_path('../../spec_helper', __FILE__)
 
-describe Formi9Compliance::Request do
+describe Formi9::Request do
   describe '#get' do
     it 'should trigger a get request ' do
       #TODO

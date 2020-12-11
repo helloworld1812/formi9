@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in formi9_compliance.gemspec
+# Specify your gem's dependencies in formi9.gemspec
 gemspec
 
 gem "rake", "~> 12.0"

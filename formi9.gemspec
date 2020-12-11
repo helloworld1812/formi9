@@ -1,22 +1,22 @@
-require_relative 'lib/formi9_compliance/version'
+require_relative 'lib/formi9/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "formi9_compliance"
-  spec.version       = Formi9Compliance::VERSION
+  spec.name          = "formi"
+  spec.version       = Formi9::VERSION
   spec.authors       = ["Ryan Lv"]
   spec.email         = ["tech@workstream.is"]
 
   spec.summary       = 'A Ruby API wrapper for formi9.com'
   spec.description   = spec.summary
-  spec.homepage      = 'https://github.com/helloworld1812/formi9_compliance'
+  spec.homepage      = 'https://github.com/helloworld1812/formi9'
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = 'https://github.com/helloworld1812/formi9_compliance'
-  spec.metadata["changelog_uri"] = 'https://github.com/helloworld1812/formi9_compliance/CHANGELOG.md'
+  spec.metadata["source_code_uri"] = 'https://github.com/helloworld1812/formi9'
+  spec.metadata["changelog_uri"] = 'https://github.com/helloworld1812/formi9/CHANGELOG.md'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

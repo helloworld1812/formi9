@@ -1,4 +1,4 @@
-module Formi9Compliance
+module Formi9
   module OAuth
     def access_token
       token = Rails.cache.read(access_token_cache_key)

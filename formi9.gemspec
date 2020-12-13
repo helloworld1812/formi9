@@ -1,7 +1,7 @@
 require_relative 'lib/formi9/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "formi"
+  spec.name          = "formi9"
   spec.version       = Formi9::VERSION
   spec.authors       = ["Ryan Lv"]
   spec.email         = ["tech@workstream.is"]

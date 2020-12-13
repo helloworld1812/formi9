@@ -6,7 +6,7 @@ describe Formi9 do
   end
 
   context "when delegating to a client" do
-    before do
+    before :each do
       stub_get("companies/acm_company").
         to_return(:body => fixture("acm_company.json"), :headers => {:content_type => "application/json; charset=utf-8"})
 

@@ -1,6 +1,6 @@
 # formi9
 
-A Ruby API wrapper for [formi9.com](https://www.formi9.com/FormI9Api/swagger/ui/index) [![Build Status](https://travis-ci.com/helloworld1812/formi9.svg?branch=master)](https://travis-ci.com/github/helloworld1812/formi9)
+A Ruby API wrapper for [formi9.com](https://www.formi9.com/FormI9Api/swagger/ui/index) [![Build Status](https://api.travis-ci.com/helloworld1812/formi9.svg?branch=master)](https://travis-ci.com/github/helloworld1812/formi9)
 
 
 ## Installation

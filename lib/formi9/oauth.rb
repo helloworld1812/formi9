@@ -1,3 +1,5 @@
+require 'active_support/core_ext/string/conversions'
+
 module Formi9
   module OAuth
     def access_token
@@ -15,7 +17,6 @@ module Formi9
       response = Faraday.post(endpoint + 'login', {id: partner_id, username: username, password: password})
       raise CredentialAreInvalid.new('Credentials are missing or invalid.') if response.status != 200
       body = JSON.parse(response.body)
-      puts access_token_cache_key
       if Rails.cache.read(access_token_cache_key).nil?
         Rails.cache.write(access_token_cache_key, body['accessToken'], expires_in: token_cache_duration(body['expirationDateUtc']))
       end

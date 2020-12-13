@@ -2,7 +2,7 @@ require File.expand_path('../../spec_helper', __FILE__)
 
 describe Formi9::OAuth do
   describe '#access_token' do
-    it 'should read token from cache xxxx' do
+    it 'should read token from cache' do
       response = {
         accessToken: 'abcdefghijklmn',
         expirationDateUtc: (Time.now + 1.week).utc.iso8601

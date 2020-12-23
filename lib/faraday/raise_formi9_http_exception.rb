@@ -1,7 +1,7 @@
 require 'faraday'
 
 module FaradayMiddleWare
-  class RaiseHttpException < Faraday::Middleware
+  class RaiseFormi9HttpException < Faraday::Middleware
     def initialize(app)
       super(app)
     end

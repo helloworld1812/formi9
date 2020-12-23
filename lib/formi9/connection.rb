@@ -23,7 +23,7 @@ module Formi9
         conn.options[:open_timeout] = open_timeout 
         conn.request :json
 
-        conn.use FaradayMiddleWare::RaiseHttpException
+        conn.use FaradayMiddleWare::RaiseFormi9HttpException
         conn.response :json, content_type: /\bjson$/
         conn.adapter Faraday.default_adapter
       end

@@ -1,4 +1,5 @@
 require 'faraday'
+require 'openssl'
 require File.expand_path('../version', __FILE__)
 
 module Formi9
@@ -19,6 +20,10 @@ module Formi9
       :per_page,
       :timeout,
       :open_timeout,
+      :b2b_encryption_algorithm,
+      :b2b_encryption_cipher_mode,
+      :b2b_encryption_key,
+      :b2b_encryption_iv,
     ].freeze
 
     # By default, don't set an access token
@@ -48,6 +53,10 @@ module Formi9
     #
     # @note JSON is the only available format at this time
     DEFAULT_FORMAT = :json
+
+    DEFAULT_B2B_ENCRYPTION_ALGORITHM = OpenSSL::Cipher::AES256
+
+    DEFAULT_B2B_ENCRYPTION_CIPHER_MODE = :CBC
 
     # By default, don't use a proxy server
     DEFAULT_PROXY = nil
@@ -89,6 +98,8 @@ module Formi9
       self.per_page           = DEFAULT_PER_PAGE
       self.timeout            = DEFAULT_TIMEOUT
       self.open_timeout       = DEFAULT_OPEN_TIMEOUT
+      self.b2b_encryption_algorithm   = DEFAULT_B2B_ENCRYPTION_ALGORITHM
+      self.b2b_encryption_cipher_mode = DEFAULT_B2B_ENCRYPTION_CIPHER_MODE
     end
   end
 end

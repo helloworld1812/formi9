@@ -5,5 +5,6 @@ module Formi9
 
     include Formi9::Client::Companies
     include Formi9::Client::Eformi9
+    include Formi9::Client::B2b
   end
 end

@@ -22,6 +22,8 @@ Formi9.configure do |config|
   config.partner_id = 'Your Partner Id'
   config.username = 'Your username'
   config.password = 'Your password'
+  # config.b2b_encryption_key = 'key'
+  # config.b2b_encryption_iv = 'iv'
 end
 ```
 

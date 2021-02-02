@@ -15,7 +15,6 @@ module Formi9
       end
 
       def case_status(result_id, options={})
-        binding.pry
         get("eformi9/status?request.resultId=#{result_id}&request.generateAutoLoginUrl=#{!!options[:auto_login_url]}")
       end
 

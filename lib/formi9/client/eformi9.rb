@@ -14,8 +14,9 @@ module Formi9
         post('eformi9/section2', options)
       end
 
-      def case_status(result_id, auto_login_link=false)
-        get("eformi9/status?request.resultId=#{result_id}&request.generateAutoLoginUrl=#{auto_login_link}")
+      def case_status(result_id, options={})
+        binding.pry
+        get("eformi9/status?request.resultId=#{result_id}&request.generateAutoLoginUrl=#{!!options[:auto_login_url]}")
       end
 
       def download_pdf(result_id, options={})

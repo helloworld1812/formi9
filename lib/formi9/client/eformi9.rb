@@ -7,7 +7,7 @@ module Formi9
       end
 
       def update_section1(options={})
-        post('eformi9/section1', options)
+        post('eformi9/section1/edit', options)
       end
 
       def create_section2(options={})

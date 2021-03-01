@@ -16,6 +16,11 @@ module Formi9
       def get_company_active_options(company_id)
         get("companies/#{company_id}/options/active").body
       end
+
+      # preset options for a specific company.
+      def create_preset2(company_id, preset_group)
+        post("companies/#{company_id}/options/preset2?presetGroup=#{preset_group}")
+      end
     end
   end
 end

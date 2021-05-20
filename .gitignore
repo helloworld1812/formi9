@@ -22,3 +22,6 @@ doc/*
 log/*
 pkg/*
 .idea/*
+
+# Vim Swap file
+*.swp

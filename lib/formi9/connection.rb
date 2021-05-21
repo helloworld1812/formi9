@@ -24,7 +24,7 @@ module Formi9
         conn.request :json
 
         conn.use FaradayMiddleWare::RaiseFormi9HttpException
-        conn.request :retry, max: 3, interval: 0.1, retry_statuses: [500, 502, 503, 504]
+        conn.request :retry, max: 3, interval: 0.1, exceptions: [Errno::ECONNREFUSED, Faraday::ConnectionFailed]
         conn.response :json, content_type: /\bjson$/
         conn.adapter Faraday.default_adapter
       end

@@ -19,11 +19,12 @@ module Formi9
       Faraday::Connection.new(options) do |conn|
         conn.authorization :Bearer, access_token
         # https://github.com/lostisland/faraday/issues/417#issuecomment-223413386
-        conn.options[:timeout] = timeout 
-        conn.options[:open_timeout] = open_timeout 
+        conn.options[:timeout] = timeout
+        conn.options[:open_timeout] = open_timeout
         conn.request :json
 
         conn.use FaradayMiddleWare::RaiseFormi9HttpException
+        conn.request :retry, max: 3, interval: 0.1, exceptions: [Errno::ECONNREFUSED, Faraday::ConnectionFailed]
         conn.response :json, content_type: /\bjson$/
         conn.adapter Faraday.default_adapter
       end

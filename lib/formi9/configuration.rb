@@ -19,6 +19,7 @@ module Formi9
       :user_agent,
       :per_page,
       :timeout,
+      :ssl_verify,
       :open_timeout,
       :b2b_encryption_algorithm,
       :b2b_encryption_cipher_mode,
@@ -45,6 +46,8 @@ module Formi9
 
     # By default, the open timeout is 20 seconds.
     DEFAULT_OPEN_TIMEOUT = 20
+
+    DEFAULT_SSL_VERIFY = false
 
     # The endpoint that will be used to connect if none is set
     DEFAULT_ENDPOINT = 'https://www.formi9.com/FormI9Api/partner/v2.0/'.freeze
@@ -98,6 +101,7 @@ module Formi9
       self.per_page           = DEFAULT_PER_PAGE
       self.timeout            = DEFAULT_TIMEOUT
       self.open_timeout       = DEFAULT_OPEN_TIMEOUT
+      self.ssl_verify         = DEFAULT_SSL_VERIFY
       self.b2b_encryption_algorithm   = DEFAULT_B2B_ENCRYPTION_ALGORITHM
       self.b2b_encryption_cipher_mode = DEFAULT_B2B_ENCRYPTION_CIPHER_MODE
     end

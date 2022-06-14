@@ -13,7 +13,8 @@ module Formi9
           "User-Agent" => Formi9.user_agent,
         },
         proxy: proxy,
-        url: endpoint
+        url: endpoint,
+        ssl: { verify: ssl_verify }
       }.merge(connection_options)
 
       Faraday::Connection.new(options) do |conn|

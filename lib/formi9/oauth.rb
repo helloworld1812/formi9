@@ -14,7 +14,8 @@ module Formi9
     end
 
     def reset_token
-      response = Faraday.post(endpoint + 'login', {id: partner_id, username: username, password: password})
+      connection = Faraday.new endpoint, :ssl => {:verify => ssl_verify }
+      response = connection.post('login', {id: partner_id, username: username, password: password} )
       raise CredentialAreInvalid.new('Credentials are missing or invalid.') if response.status != 200
       body = JSON.parse(response.body)
       if Rails.cache.read(access_token_cache_key).nil?
